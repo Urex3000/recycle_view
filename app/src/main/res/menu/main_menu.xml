@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_books"
+            android:title="Книги"
+            android:icon="@drawable/ic_book" />
+        <item
+            android:id="@+id/nav_authors"
+            android:title="Авторы"
+            android:icon="@drawable/ic_author" />
+        <item
+            android:id="@+id/nav_favorit"
+            android:title="Избранное"
+            android:icon="@drawable/ic_bookmark" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/settings"
+            android:title="Настройки"
+            android:icon="@drawable/ic_settings" />
+        <item
+            android:id="@+id/about"
+            android:title="О приложении"
+            android:icon="@drawable/ic_about" />
+        <item
+            android:id="@+id/bug"
+            android:title="Сообщить об ошибке"
+            android:icon="@drawable/ic_bug" />
+
+
+    </group>
+
+
+</menu>
