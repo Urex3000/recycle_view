@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageBook"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/ic_book"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_above="@id/name"
+            android:contentDescription="Изображение книги малое" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageBook"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:text="Название"
+            android:textColor="#000000"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/janr"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/name"
+            android:layout_gravity="bottom"
+            android:text="Жанр"
+            android:textColor="#4B000000"
+
+            />
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
