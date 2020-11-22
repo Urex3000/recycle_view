@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class BookAdapter(
     private val context: Context,
-    private val exampleList: List<ItemClass>,
+
     private val mainItemClass: List<ItemClass>
 ) :
     RecyclerView.Adapter<BookAdapter.Holder>() {
