@@ -1,37 +1,62 @@
 package com.example.recycle_view
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.element_item.view.*
 
-class BookAdapter(private val exampleList: List<ItemClass>) :
+class BookAdapter(
+    private val context: Context,
+    private val exampleList: List<ItemClass>,
+    private val mainItemClass: List<ItemClass>
+) :
     RecyclerView.Adapter<BookAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.element_item,
-            parent, false
+        return BookAdapter.Holder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.element_item,
+                parent, false
+            )
         )
 
-        return Holder(itemView)
+
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val currentItem = exampleList[position]
-        holder.imageView.setImageResource(currentItem.imageResource)
-        holder.textView1.text = currentItem.text1
-        holder.textView2.text = currentItem.text2
+
+
+        holder.categoryTitle.text = mainItemClass[position].text1
+        setBookListRecycler(holder.bookListRecycler, mainItemClass[position].categoryItem)
+
     }
 
-    override fun getItemCount() = exampleList.size
+    override fun getItemCount(): Int {
+        return mainItemClass.size
+    }
+
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.image_view
-        val textView1: TextView = itemView.name
-        val textView2: TextView = itemView.author
+
+        var categoryTitle: TextView
+        var bookListRecycler: RecyclerView
+
+        init {
+            categoryTitle = itemView.findViewById(R.id.Callname)
+            bookListRecycler = itemView.findViewById(R.id.BookList)
+        }
+
+
     }
+
+    private fun setBookListRecycler(recyclerView: RecyclerView, categoryItem: List<BookinfoClass>) {
+
+        val itemRecyclerAdapter = BookListAdapter(context, categoryItem)
+        recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        recyclerView.adapter = itemRecyclerAdapter
+    }
+
 }

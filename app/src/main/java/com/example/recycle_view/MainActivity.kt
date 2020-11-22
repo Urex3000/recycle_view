@@ -6,9 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private var MainListRecycler: RecyclerView? = null
+    private var bookAdapter: BookAdapter? = null
 
     lateinit var toggle: ActionBarDrawerToggle
 
@@ -16,10 +20,166 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val exampleList = generateList(15)
-        recycler_view.adapter = BookAdapter(exampleList)
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.setHasFixedSize(true)
+
+        //1 список книг
+        val categoryItemList: MutableList<BookinfoClass> = ArrayList()
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+//1 список книг
+        val categoryItemList2: MutableList<BookinfoClass> = ArrayList()
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+//Фантастика
+        val categoryItemList3: MutableList<BookinfoClass> = ArrayList()
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+//Антиутопия
+        val categoryItemList4: MutableList<BookinfoClass> = ArrayList()
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+//Науч-поп
+        val categoryItemList5: MutableList<BookinfoClass> = ArrayList()
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+        categoryItemList.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "Атлант расправит плечи",
+                "Айн Ренд"
+            )
+        )
+//Списки книг
+        val mainItemClass: MutableList<ItemClass> = ArrayList()
+        mainItemClass.add(ItemClass("Популярное", categoryItemList))
+        mainItemClass.add(ItemClass("Классика", categoryItemList2))
+        mainItemClass.add(ItemClass("Фантастика", categoryItemList3))
+        mainItemClass.add(ItemClass("Антиутопия", categoryItemList4))
+        mainItemClass.add(ItemClass("Науч-Поп", categoryItemList5))
+
+        setMainListRecycler(mainItemClass)
 
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
@@ -57,18 +217,18 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-    }
-
-    private fun generateList(size: Int): List<ItemClass> {
-        val list = ArrayList<ItemClass>()
-        for (i in 0 until size) {
-
-            val item = ItemClass(R.drawable.ic_book, "Название книги $i", "Автор, Жанр")
-            list += item
-        }
-        return list
 
     }
+
+    private fun setMainListRecycler(mainItemClass: List<ItemClass>) {
+
+        MainListRecycler = findViewById(R.id.recycler_view)
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
+        MainListRecycler!!.layoutManager = layoutManager
+        bookAdapter = BookAdapter(this, mainItemClass)
+        MainListRecycler!!.adapter = bookAdapter
+    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
