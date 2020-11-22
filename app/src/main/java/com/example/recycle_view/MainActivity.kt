@@ -33,142 +33,142 @@ class MainActivity : AppCompatActivity() {
         categoryItemList.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Королевство",
+                "Ю Несбё"
             )
         )
         categoryItemList.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Вторая жизнь Уве",
+                "Фредрик Бакман"
             )
         )
         categoryItemList.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Тревожные люди",
+                "Фредрик Бакман"
             )
         )
 //1 список книг
         val categoryItemList2: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList.add(
+        categoryItemList2.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Убить пересмешника",
+                "Харпер Ли"
             )
         )
-        categoryItemList.add(
+        categoryItemList2.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Мастер и Маргарита",
+                "Михаил Булгаков"
             )
         )
-        categoryItemList.add(
+        categoryItemList2.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Война и мир",
+                "Лев Толстой"
             )
         )
-        categoryItemList.add(
+        categoryItemList2.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Идиот",
+                "Федор Достоевский"
             )
         )
 //Фантастика
         val categoryItemList3: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList.add(
+        categoryItemList3.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Институт",
+                "Стивен Кинг"
             )
         )
-        categoryItemList.add(
+        categoryItemList3.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "1917: Да здравствует император!",
+                "Владимир Марков"
             )
         )
-        categoryItemList.add(
+        categoryItemList3.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Происхождение",
+                "Дэн Браун"
             )
         )
-        categoryItemList.add(
+        categoryItemList3.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Последняя одиссея",
+                "Джеймс Роллинс"
             )
         )
 //Антиутопия
         val categoryItemList4: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList.add(
+        categoryItemList4.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "О дивный новый мир",
+                "Олдос Хаксли"
+            )
+        )
+        categoryItemList4.add(
+            BookinfoClass(
+                R.drawable.ic_book,
+                "1984",
+                "Джордж Оруэлл"
+            )
+        )
+        categoryItemList4.add(
             BookinfoClass(
                 R.drawable.ic_book,
                 "Атлант расправит плечи",
                 "Айн Ренд"
             )
         )
-        categoryItemList.add(
+        categoryItemList4.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
-            )
-        )
-        categoryItemList.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
-            )
-        )
-        categoryItemList.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "451 градус по Фаренгейту",
+                "Рэй Брэдбери"
             )
         )
 //Науч-поп
         val categoryItemList5: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList.add(
+        categoryItemList5.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Гормоны счастья",
+                "Лоретта Бройнинг"
             )
         )
-        categoryItemList.add(
+        categoryItemList5.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Очаровательный кишечник",
+                "Джулия Эндерс"
             )
         )
-        categoryItemList.add(
+        categoryItemList5.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Еда и мозг",
+                "Дэвид Перлмуттер"
             )
         )
-        categoryItemList.add(
+        categoryItemList5.add(
             BookinfoClass(
                 R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
+                "Четвертая мировая война",
+                "Андрей Курпатов"
             )
         )
 //Списки книг
