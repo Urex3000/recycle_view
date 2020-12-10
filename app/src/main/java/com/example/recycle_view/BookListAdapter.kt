@@ -23,9 +23,11 @@ class BookListAdapter(val context: Context, val categoryItem: List<BookinfoClass
     override fun onBindViewHolder(holder: BookHolder, position: Int) {
 
         val currentItem = categoryItem[position]
-        holder.imageView.setImageResource(currentItem.imageResource)
-        holder.textView1.text = currentItem.text1
-        holder.textView2.text = currentItem.text2
+
+        holder.textView1.text = currentItem.title
+        holder.textView2.text = currentItem.author
+
+
     }
 
 

@@ -1,4 +1,13 @@
 package com.example.recycle_view
 
-class BookinfoClass(val imageResource: Int, val text1: String, val text2: String) {
+import com.google.gson.annotations.SerializedName
+
+class BookinfoClass {
+    @SerializedName("title")
+    public var title: String? = null
+    public var description: String? = null
+    public var author: String? = null
+
+    @SerializedName("smallThumbnail")
+    val imageResource: Int? = null
 }

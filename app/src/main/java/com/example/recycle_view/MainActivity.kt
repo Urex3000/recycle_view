@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,166 +21,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var bookData: ArrayList<BookinfoClass> = ArrayList()
+        fun getItem(position: Int) {
+            val alertDialog = AlertDialog.Builder(this)
+            alertDialog.setTitle(bookData.get(position).title)
+        }
 
-        //1 список книг
-        val categoryItemList: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
-            )
-        )
-        categoryItemList.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Королевство",
-                "Ю Несбё"
-            )
-        )
-        categoryItemList.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Вторая жизнь Уве",
-                "Фредрик Бакман"
-            )
-        )
-        categoryItemList.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Тревожные люди",
-                "Фредрик Бакман"
-            )
-        )
-//1 список книг
-        val categoryItemList2: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList2.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Убить пересмешника",
-                "Харпер Ли"
-            )
-        )
-        categoryItemList2.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Мастер и Маргарита",
-                "Михаил Булгаков"
-            )
-        )
-        categoryItemList2.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Война и мир",
-                "Лев Толстой"
-            )
-        )
-        categoryItemList2.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Идиот",
-                "Федор Достоевский"
-            )
-        )
-//Фантастика
-        val categoryItemList3: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList3.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Институт",
-                "Стивен Кинг"
-            )
-        )
-        categoryItemList3.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "1917: Да здравствует император!",
-                "Владимир Марков"
-            )
-        )
-        categoryItemList3.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Происхождение",
-                "Дэн Браун"
-            )
-        )
-        categoryItemList3.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Последняя одиссея",
-                "Джеймс Роллинс"
-            )
-        )
-//Антиутопия
-        val categoryItemList4: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList4.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "О дивный новый мир",
-                "Олдос Хаксли"
-            )
-        )
-        categoryItemList4.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "1984",
-                "Джордж Оруэлл"
-            )
-        )
-        categoryItemList4.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Атлант расправит плечи",
-                "Айн Ренд"
-            )
-        )
-        categoryItemList4.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "451 градус по Фаренгейту",
-                "Рэй Брэдбери"
-            )
-        )
-//Науч-поп
-        val categoryItemList5: MutableList<BookinfoClass> = ArrayList()
-        categoryItemList5.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Гормоны счастья",
-                "Лоретта Бройнинг"
-            )
-        )
-        categoryItemList5.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Очаровательный кишечник",
-                "Джулия Эндерс"
-            )
-        )
-        categoryItemList5.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Еда и мозг",
-                "Дэвид Перлмуттер"
-            )
-        )
-        categoryItemList5.add(
-            BookinfoClass(
-                R.drawable.ic_book,
-                "Четвертая мировая война",
-                "Андрей Курпатов"
-            )
-        )
-//Списки книг
-        val mainItemClass: MutableList<ItemClass> = ArrayList()
-        mainItemClass.add(ItemClass("Популярное", categoryItemList))
-        mainItemClass.add(ItemClass("Классика", categoryItemList2))
-        mainItemClass.add(ItemClass("Фантастика", categoryItemList3))
-        mainItemClass.add(ItemClass("Антиутопия", categoryItemList4))
-        mainItemClass.add(ItemClass("Науч-Поп", categoryItemList5))
 
-        setMainListRecycler(mainItemClass)
+
+
 
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
